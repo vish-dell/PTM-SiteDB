@@ -1,0 +1,23 @@
+﻿.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.git/
+instance/cache/
+verify_cache/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+
+# Local database and code backups
+*.bak
+*.bak_*
+*.bak_before*
+*.db.bak*
+instance/*.db.bak*

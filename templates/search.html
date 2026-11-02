@@ -1,0 +1,23 @@
+{% extends "base.html" %}{% block title %}Search PTM Sites — PTM-SiteDB{% endblock %}
+{% block content %}
+<div class="page-header"><h2>Search PTM Sites</h2><p>Filter by gene, modification type, disease context, kinase, confidence level or evidence type.</p></div>
+<form class="filter-bar" method="get">
+<div class="form-group wide"><label>Keyword</label><input name="q" value="{{args.get('q','')}}" placeholder="Gene, UniProt ID, disease, kinase…"></div>
+<div class="form-group"><label>Gene name</label><input name="gene" value="{{args.get('gene','')}}" placeholder="e.g. TP53"></div>
+<div class="form-group"><label>PTM Type</label><input name="ptm_type" value="{{args.get('ptm_type','')}}" placeholder="Phosphorylation"></div>
+<div class="form-group"><label>Confidence</label><select name="confidence"><option value="">Any</option>{% for x in ['High','Medium','Low'] %}<option {% if args.get('confidence')|lower==x|lower %}selected{% endif %}>{{x}}</option>{% endfor %}</select></div>
+<div class="form-group"><label>Evidence</label><input name="evidence" value="{{args.get('evidence','')}}" placeholder="in vivo / MS/MS"></div>
+<div class="form-group"><label>Kinase</label><input name="kinase" value="{{args.get('kinase','')}}" placeholder="e.g. ATM"></div>
+<div class="form-group"><label>Disease</label><input name="disease" value="{{args.get('disease','')}}" placeholder="e.g. Cancer"></div>
+<div class="form-actions"><button class="btn btn-primary">Search</button><a class="btn btn-secondary" href="{{url_for('search')}}">Clear</a></div>
+</form>
+<div class="result-meta"><b>Showing {{rows|length}}</b> matching sites <a class="btn btn-secondary btn-sm" href="{{url_for('download')}}">↓ Export TSV</a></div>
+<div class="table-wrap"><table><thead><tr><th>Gene / Protein</th><th>UniProt</th><th>PTM Type</th><th>Site</th><th>Flanking ±7</th><th>Kinase</th><th>Disease Context</th><th>Evidence</th><th>Confidence</th><th>PMID</th><th>3D</th></tr></thead>
+<tbody>{% for r in rows %}<tr>
+<td><a class="td-gene" href="{{url_for('protein',uniprot=r.uniprot)}}">{{r.gene}}</a></td>
+<td><a class="mono" href="https://www.uniprot.org/uniprotkb/{{r.uniprot}}" target="_blank">{{r.uniprot}}</a></td>
+<td>{{r.ptm_type}}</td><td><b>{{r.site}}</b></td><td class="flank">{{r.flanking}}</td><td>{{r.kinase or '—'}}</td><td>{{r.disease_context}}</td>
+<td><span class="badge">{{r.evidence}}</span></td><td><span class="badge">{{r.confidence}}</span></td><td><a href="https://pubmed.ncbi.nlm.nih.gov/{{r.pmid}}/" target="_blank">{{r.pmid}}</a></td>
+<td><a class="btn3d" href="{{url_for('viewer',uniprot=r.uniprot)}}">3D</a></td>
+</tr>{% else %}<tr><td colspan="11" class="empty">No records match these filters.</td></tr>{% endfor %}</tbody></table></div>
+{% endblock %}

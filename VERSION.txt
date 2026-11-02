@@ -1,0 +1,6 @@
+PTM-SiteDB Original-Style + Research Integration v1.1 (repair build 2026-10-10)
+Original interface retained; research workflow mounted under /research/; evidence-first 3D viewer and data bootstrap fixes.
+Research analysis controls v1.1 added 2026-10-11: recurrence collapse, decoy-anchor control, burden-stratified test, family-corrected threshold grid (research/CHANGELOG_v1_1.md).
+Fix 2026-10-11: Ensembl orthologue batching/retry, evidence-first 3D viewer report, 3D-proximity 'find studies where this gene is mutated' helper.
+PTM-SiteDB Original-Style + Research Integration v1.2 (fix build 2026-10-17)
+3D viewer rebinding fix, vendored 3Dmol, verified cBioPortal retrieval, corrected eligible-residue null model, configurable distance/permutations. See REPAIR_NOTES_2026-10-17.md.

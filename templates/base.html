@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}Decode the Phosphoproteome of Human Cancer{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}?v=20261010-evidence-fix">
+{% block head %}{% endblock %}
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="{{ url_for('home') }}"><span class="logo-mark">PTM</span> Phosphoproteome Atlas</a>
+<ul class="nav-links">
+<li><a href="{{ url_for('home') }}">Home</a></li>
+<li><a href="{{ url_for('search') }}">Search</a></li>
+<li><a href="{{ url_for('browse') }}">Browse</a></li>
+<li><a href="{{ url_for('statistics') }}">Statistics</a></li>
+<li class="dd"><a href="{{ url_for('features.features_index') }}">Analysis Suite ▾</a><ul class="dd-menu">{% for ep,label,icon,desc in FEATURES %}<li><a href="{{ url_for('features.'+ep+'_page') }}">{{icon}} {{label}}</a></li>{% endfor %}</ul></li>
+<li class="dd"><a href="/research/">Research ▾</a><ul class="dd-menu">
+<li><a href="/research/">Research overview</a></li>
+<li><a href="/research/statistics">Expanded data scale</a></li>
+<li><a href="/research/upload-analysis">Run cohort analysis</a></li>
+<li><a href="/research/analysis">Analysis results</a></li>
+<li><a href="/research/benchmark">Driver benchmark</a></li>
+<li><a href="/research/robustness">Robustness</a></li>
+<li><a href="/research/related-work">Related work</a></li>
+<li><a href="/research/methodology">Methodology</a></li>
+</ul></li>
+<li><a href="{{ url_for('download') }}">Download</a></li>
+<li><a href="{{ url_for('connection_check') }}">Connection Check</a></li>
+<li><a href="{{ url_for('help_page') }}">Help</a></li>
+</ul><span class="nav-version">v4.0</span>
+</div></nav>
+<main class="page-body"><div class="container">{% block content %}{% endblock %}</div></main>
+<footer><div class="footer-inner">
+<div><div class="logo-name">Decode the Phosphoproteome of Human Cancer</div><p>An evidence-first analysis platform built on PTM-SiteDB records: hotspots, 3D distances, kinase networks, conservation, cancer mutations, crosstalk and hypothesis generation. No synthetic data.</p></div>
+<div><h4>Database</h4><a href="{{url_for('search')}}">Search PTM Sites</a><a href="{{url_for('browse')}}">Browse All Sites</a><a href="{{url_for('statistics')}}">Statistics</a><a href="{{url_for('download')}}">Download Data</a><a href="{{url_for('features.features_index')}}">Analysis Suite</a></div>
+<div><h4>Sources</h4><a href="https://www.uniprot.org/" target="_blank">UniProt/Swiss-Prot</a><a href="https://www.rcsb.org/" target="_blank">RCSB PDB</a><a href="https://alphafold.ebi.ac.uk/" target="_blank">AlphaFold DB</a><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">PubMed</a></div>
+</div></footer>
+<script src="{{url_for('static',filename='js/app.js')}}?v=20261010-evidence-fix"></script>
+{% block scripts %}{% endblock %}
+</body></html>

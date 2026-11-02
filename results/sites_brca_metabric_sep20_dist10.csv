@@ -1,0 +1,8 @@
+gene,uniprot,site,ptm_type,pos,n_contacts,n_universe,n_neighbourhood,n_mutated_in_universe,n_mutated_in_neighbourhood,expected,fold_enrichment,fold_ci95,p_value,p_value_reason,q_bh_protein,q_bh_all_sites,p_perm,q_perm_protein,q_perm_all_sites,n_permutations,p_perm_note,hit_positions
+TP53,P04637,S127,Phosphorylation,127,21,196,7,79,5,2.821,1.7722,"[0.7654, 3.913]",0.09520970469730874,,0.155093698864586,0.20679159848611464,0.1287742451509698,0.23695260947810437,0.3159368126374725,5000,,270;271;282;285;286
+TP53,P04637,S215,Phosphorylation,215,20,196,9,80,6,3.673,1.6333,"[0.7584, 3.3564]",0.10339579924305732,,0.155093698864586,0.20679159848611464,0.1791641671665667,0.23695260947810437,0.3159368126374725,5000,,158;159;193;194;195;255
+TP53,P04637,S269,Phosphorylation,269,22,196,12,69,5,4.224,1.1836,"[0.512, 2.5917]",0.42158811932045653,,0.42158811932045653,0.5621174924272754,0.23695260947810437,0.23695260947810437,0.3159368126374725,5000,,110;111;131;132;159
+AKT1,P31749,S473,Phosphorylation,473,15,394,11,7,0,0.195,0.0,"[0.0, 12.6915]",1.0,,1.0,1.0,1.0,1.0,1.0,5000,,
+TP53,P04637,S20,Phosphorylation,20,5,229,0,92,0,0.0,,,,empty neighbourhood (no sequence-distant residue within the radius),,,,,,0,Permutation test not estimable: empty neighbourhood (no sequence-distant residue within the radius).,
+AKT1,P31749,T308,Phosphorylation,308,13,361,0,5,0,0.0,,,,empty neighbourhood (no sequence-distant residue within the radius),,,,,,0,Permutation test not estimable: empty neighbourhood (no sequence-distant residue within the radius).,
+CTNNB1,P35222,Y489,Phosphorylation,489,14,549,4,0,0,,,,,no mutated position in the eligible residues,,,,,,0,Permutation test not estimable: no mutated position in the eligible residues.,

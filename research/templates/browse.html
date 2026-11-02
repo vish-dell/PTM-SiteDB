@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}Browse{% endblock %}{% block content %}
+<section class="pagehead"><span class="eyebrow">BROWSE</span><h1>Browse the PTM evidence layer</h1></section>
+<div class="card"><h2>Genes</h2><div class="chips">{% for g in genes %}<a class="chip" href="{{ url_for('gene_page',gene=g) }}">{{ g }}</a>{% endfor %}</div></div>
+<div class="card"><h2>Recent source rows</h2><div class="tablewrap"><table><thead><tr><th>Gene</th><th>UniProt</th><th>Position</th><th>PTM type</th></tr></thead><tbody>{% for r in rows %}<tr><td>{{ r.gene }}</td><td>{{ r.uniprot }}</td><td>{{ r.position }}</td><td>{{ r.ptm_type }}</td></tr>{% endfor %}</tbody></table></div></div>
+{% endblock %}

@@ -1,0 +1,18 @@
+﻿id,uniprot,site,pmid,kinase,flags,title
+336,P31749,S2,101545721,,PMID_NOT_FOUND:101545721,
+349,P31749,T312,11725543,,GENE_NOT_IN_ABSTRACT;SITE_NOT_IN_ABSTRACT,[Roles of perlecan in development and disease: studies in knockout mice and human disorder
+354,P31749,Y437,119577,,GENE_NOT_IN_ABSTRACT;SITE_NOT_IN_ABSTRACT;NOT_TAGGED_HUMAN;VERY_OLD:1979,Altered inotropic and chronotropic effects of noradrenaline on isolated rat atria exposed 
+361,P31749,S475,16173467,,GENE_NOT_IN_ABSTRACT;SITE_NOT_IN_ABSTRACT;NOT_TAGGED_HUMAN,"Biochemical character of the purified OsRAA1, a novel rice protein with GTP-binding activi"
+362,P31749,S477,16173479,,GENE_NOT_IN_ABSTRACT;SITE_NOT_IN_ABSTRACT;NOT_TAGGED_HUMAN,"Comparisons of the effects of acupuncture, electroacupuncture, and transcutaneous cranial "
+363,P31749,T479,16173491,,GENE_NOT_IN_ABSTRACT;SITE_NOT_IN_ABSTRACT;NOT_TAGGED_HUMAN,Plasma pharmacokinetics and synovial fluid concentrations after oral administration of sin
+420,P15056,Y746,20007894,,GENE_NOT_IN_ABSTRACT;SITE_NOT_IN_ABSTRACT,Cell-specific information processing in segregating populations of Eph receptor ephrin-exp
+454,P38398,S616,17525332,,GENE_NOT_IN_ABSTRACT;SITE_NOT_IN_ABSTRACT,ATM and ATR substrate analysis reveals extensive protein networks responsive to DNA damage
+495,P38398,S1245,17525332,,GENE_NOT_IN_ABSTRACT;SITE_NOT_IN_ABSTRACT,ATM and ATR substrate analysis reveals extensive protein networks responsive to DNA damage
+496,P38398,T1246,28555341,,GENE_NOT_IN_ABSTRACT;SITE_NOT_IN_ABSTRACT,Offline pentafluorophenyl (PFP)-RP prefractionation as an alternative to high-pH RP for co
+503,P38398,T1289,17525332,,GENE_NOT_IN_ABSTRACT;SITE_NOT_IN_ABSTRACT,ATM and ATR substrate analysis reveals extensive protein networks responsive to DNA damage
+504,P38398,S1301,17525332,,GENE_NOT_IN_ABSTRACT;SITE_NOT_IN_ABSTRACT,ATM and ATR substrate analysis reveals extensive protein networks responsive to DNA damage
+508,P38398,S1342,17525332,,GENE_NOT_IN_ABSTRACT;SITE_NOT_IN_ABSTRACT,ATM and ATR substrate analysis reveals extensive protein networks responsive to DNA damage
+563,P38398,T1700,17525332,,GENE_NOT_IN_ABSTRACT;SITE_NOT_IN_ABSTRACT,ATM and ATR substrate analysis reveals extensive protein networks responsive to DNA damage
+564,P38398,T1720,17525332,,GENE_NOT_IN_ABSTRACT;SITE_NOT_IN_ABSTRACT,ATM and ATR substrate analysis reveals extensive protein networks responsive to DNA damage
+579,O14757,S317,11252893,,GENE_NOT_IN_ABSTRACT;SITE_NOT_IN_ABSTRACT,The many substrates and functions of ATM.
+755,P04637,S99,17525332,,GENE_NOT_IN_ABSTRACT;SITE_NOT_IN_ABSTRACT,ATM and ATR substrate analysis reveals extensive protein networks responsive to DNA damage

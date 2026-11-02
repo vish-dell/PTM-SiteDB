@@ -1,0 +1,25 @@
+{% extends "base.html" %}{% block title %}Browse — PTM-SiteDB{% endblock %}{% block content %}
+<div class="page-header"><h2>Browse Database</h2><p>Explore all {{total_proteins}} proteins in PTM-SiteDB.</p></div>
+<div class="tabs">
+<a class="tab{{ ' active' if view=='proteins' else '' }}" href="{{url_for('browse',view='proteins')}}">Proteins</a>
+<a class="tab{{ ' active' if view=='sites' else '' }}" href="{{url_for('browse',view='sites')}}">All PTM Sites</a>
+</div>
+{% if view=='sites' %}
+<p class="result-meta">Showing <b>{{rows|length}}</b> PTM site record{{'' if rows|length==1 else 's'}}.</p>
+<div class="table-wrap"><table><thead><tr><th>Gene</th><th>UniProt</th><th>PTM</th><th>Site</th><th>Kinase</th><th>Disease</th><th>Evidence</th><th>Confidence</th><th>3D</th></tr></thead><tbody>
+{% for r in rows %}<tr><td><a class="td-gene" href="{{url_for('protein',uniprot=r.uniprot)}}">{{r.gene}}</a></td><td class="mono">{{r.uniprot}}</td><td>{{r.ptm_type}}</td><td><b>{{r.site}}</b></td><td>{{r.kinase or '—'}}</td><td>{{r.disease_context}}</td><td>{{r.evidence}}</td><td>{{r.confidence}}</td><td><a class="btn3d" href="{{url_for('viewer',uniprot=r.uniprot)}}">3D</a></td></tr>{% endfor %}
+</tbody></table></div>
+{% else %}
+<p class="result-meta">Showing <b>1–{{proteins|length}}</b> of <b>{{proteins|length}}</b></p>
+<div class="protein-grid">
+{% for p in proteins %}
+<a class="protein-card" href="{{url_for('protein',uniprot=p.uniprot)}}">
+  <span class="protein-uid">{{p.uniprot}}</span>
+  <h4>{{p.gene}}</h4>
+  <p>{{p.name}}</p>
+  <div class="protein-badges"><span class="badge">{{p.sites}} PTM site{{'' if p.sites==1 else 's'}}</span><span class="badge">{{'{:,}'.format(p.length)}} aa</span></div>
+</a>
+{% endfor %}
+</div>
+{% endif %}
+{% endblock %}

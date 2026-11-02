@@ -1,0 +1,3 @@
+gene,uniprot,n_studies,studies,fisher_p,q_bh
+TP53,P04637,2,brca_tcga;brca_metabric,0.3062068876842096,0.6124137753684192
+AKT1,P31749,2,brca_tcga;brca_metabric,1.0,1.0

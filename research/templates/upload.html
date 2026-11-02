@@ -1,0 +1,22 @@
+{% extends "base.html" %}{% block title %}Run Cohort Analysis{% endblock %}{% block content %}
+<section class="pagehead"><span class="eyebrow">REAL COHORT INPUT</span><h1>Run the pre-specified PTM-anchor analysis</h1><p>Upload a real somatic MAF from a cohort. The site uses the pre-built genome-matched SBS96 missense-opportunity map and protein CA coordinates prepared from the same reference assembly/transcript definition.</p></section>
+{% if message %}<div class="notice success">{{ message }}</div>{% endif %}{% if error %}<pre class="notice error">{{ error }}</pre>{% endif %}
+{% if not status.get('opportunity_map_ready') or not status.get('coordinates_ready') or not status.get('reference_fasta_ready') %}
+<div class="notice error"><strong>Analysis inputs are not fully prepared.</strong> First run <code>PREPARE_GENOMIC_INPUTS.ps1</code> with a genome FASTA and matching GTF/GTF.GZ file. That step enumerates real missense opportunities and maps compatible AlphaFold CA coordinates. See the preparation guide below. The website will not silently run a fake or sequence-only proxy as the 3D primary analysis.</div>
+{% endif %}
+<form class="card formgrid" method="post" enctype="multipart/form-data">
+  <label>Cohort name<input name="cohort" required placeholder="TCGA_BRCA" maxlength="80"></label>
+  <label>Somatic MAF file (.maf/.maf.gz)<input type="file" name="maf" accept=".maf,.txt,.tsv,.gz" required></label>
+  <label>Reference FASTA override (optional; must match opportunity map)<input type="file" name="fasta" accept=".fa,.fasta"></label>
+  <label>Context-opportunity map override (optional)<input type="file" name="opportunities" accept=".tsv,.txt"></label>
+  <label>CA-coordinate map override (optional)<input type="file" name="structure" accept=".tsv,.csv,.txt"></label>
+  <label>Permutations<select name="permutations"><option value="5000" selected>5,000 (primary default)</option><option value="1000">1,000 (development smoke test)</option></select></label>
+  <label class="checkline"><input type="checkbox" name="robustness"> Also run all 12 threshold settings (3 sequence cutoffs × 4 distance cutoffs)</label>
+  <div class="full"><button class="button primary" type="submit">Run analysis</button></div>
+</form>
+<section class="grid-2">
+  <div class="card"><h3>Inputs and alignment rule</h3><p>Use GRCh38 MAF + GRCh38 FASTA + GRCh38 GTF together (or a consistently matched GRCh37 trio). The opportunity map chooses MANE Select, then Ensembl canonical, then longest-CDS fallback. MAF rows are mapped by genomic coordinates to the same selected transcript; incompatible events are flagged.</p></div>
+  <div class="card"><h3>3D coordinate rule</h3><p>The coordinate table must use the same canonical protein residue numbering as the opportunity map. The included AlphaFold fetcher aligns sequences and keeps only identical-residue mappings. Predicted coordinates are not experimental structures; source and mapping QC are retained.</p></div>
+</section>
+<div class="card"><h2>First-time genomic preparation</h2><p>Open PowerShell in the website folder and run:</p><pre class="codeblock">.\PREPARE_GENOMIC_INPUTS.ps1 -ReferenceFasta "C:\data\GRCh38.fa" -Gtf "C:\data\gencode.annotation.gtf.gz"</pre><p>Use a fasta with a <code>.fai</code> index or let the script create one. Do not mix assemblies. For long downloads, run the script directly rather than through the browser.</p></div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block title %}Statistics — PTM-SiteDB{% endblock %}{% block content %}
+<div class="page-header"><h2>Statistics</h2><p>All values below are calculated directly from the current PTM database.</p></div>
+<div class="stats-grid">{% for key,label in [('sites','PTM Sites'),('proteins','Proteins'),('kinases','Kinases'),('publications','Publications')] %}<div class="stat-card"><div class="stat-label">{{label}}</div><div class="stat-value">{{stats[key]}}</div></div>{% endfor %}</div>
+<div class="chart-grid">
+<section class="panel"><h3>Sites by PTM Type</h3>{% for r in types %}<div class="bar-row"><span>{{r.ptm_type}}</span><strong>{{r.n}}</strong><div class="bar"><i style="width:{{ (r.n / (types[0].n or 1))*100 }}%"></i></div></div>{% endfor %}</section>
+<section class="panel"><h3>Top Proteins by Site Count</h3>{% for r in genes[:9] %}<div class="bar-row"><span>{{r.gene}}</span><strong>{{r.n}}</strong><div class="bar"><i style="width:{{ (r.n / (genes[0].n or 1))*100 }}%"></i></div></div>{% endfor %}</section>
+<section class="panel"><h3>Evidence Type Distribution</h3>{% for r in evidence %}<div class="bar-row"><span>{{r.evidence}}</span><strong>{{r.n}}</strong><div class="bar"><i style="width:{{ (r.n / (evidence[0].n or 1))*100 }}%"></i></div></div>{% endfor %}</section>
+<section class="panel"><h3>Confidence Level Distribution</h3>{% for r in confidence %}<div class="bar-row"><span>{{r.confidence}}</span><strong>{{r.n}}</strong><div class="bar"><i style="width:{{ (r.n / (confidence[0].n or 1))*100 }}%"></i></div></div>{% endfor %}</section>
+<section class="panel"><h3>Top Upstream Kinases</h3>{% for r in kinases %}<div class="bar-row"><span>{{r.kinase}}</span><strong>{{r.n}}</strong><div class="bar"><i style="width:{{ (r.n / (kinases[0].n or 1))*100 }}%"></i></div></div>{% endfor %}</section>
+<section class="panel"><h3>Top Disease Associations</h3>{% for r in diseases %}<div class="bar-row"><span>{{r.disease}}</span><strong>{{r.n}}</strong><div class="bar"><i style="width:{{ (r.n / (diseases[0].n or 1))*100 }}%"></i></div></div>{% endfor %}</section>
+</div>
+{% endblock %}

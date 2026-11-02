@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Analysis Suite — Phosphoproteome of Human Cancer{% endblock %}{% block content %}
+<div class="page-header"><span class="eyebrow">ANALYSIS SUITE</span><h2>Nine evidence-first modules</h2><p>Each module has its own page. Every number is computed from imported PTM-SiteDB records or fetched live from a public source; nothing is simulated, assumed or filled in.</p></div>
+{% if db_empty %}<div class="notice warn">The local database is empty — run <code>python sync_data.py</code> first.</div>{% endif %}
+<div class="feature-grid mod-grid">
+{% for ep,label,icon,desc in FEATURES %}<a class="feature modcard" href="{{url_for('features.'+ep+'_page')}}"><span class="modicon">{{icon}}</span><b>{{label}}</b><p>{{desc}}</p></a>{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}Search{% endblock %}{% block content %}
+<section class="pagehead"><span class="eyebrow">SEARCH</span><h1>Explore PTM evidence</h1><p>Search by gene, UniProt accession or PTM type.</p></section>
+<form class="searchbar" method="get"><input name="q" value="{{ q }}" placeholder="TP53, P04637, Phosphorylation"><button class="button primary">Search</button></form>
+<div class="card"><div class="tablewrap"><table><thead><tr><th>Gene</th><th>UniProt</th><th>Position</th><th>PTM type</th><th>Source</th></tr></thead><tbody>{% for r in rows %}<tr><td><a href="{{ url_for('gene_page',gene=r.gene) }}">{{ r.gene }}</a></td><td>{{ r.uniprot }}</td><td>{{ r.position }}</td><td>{{ r.ptm_type }}</td><td>{{ r.source }}</td></tr>{% endfor %}</tbody></table></div><p class="muted">Showing {{ count }} rows.</p></div>
+{% endblock %}

@@ -1,0 +1,1220 @@
+{
+    "available":  true,
+    "cbio_check":  {
+                       "api_url":  "https://www.cbioportal.org/api/molecular-profiles/brca_metabric_mutations/mutations?sampleListId=brca_metabric_sequenced\u0026entrezGeneId=7157\u0026projection=SUMMARY\u0026pageSize=50000\u0026pageNumber=0",
+                       "by_type":  {
+                                       "Frame_Shift_Del":  121,
+                                       "Frame_Shift_Ins":  40,
+                                       "In_Frame_Del":  29,
+                                       "In_Frame_Ins":  7,
+                                       "Missense_Mutation":  510,
+                                       "Nonsense_Mutation":  126,
+                                       "Splice_Region":  3,
+                                       "Splice_Site":  52
+                                   },
+                       "n_distinct_samples":  864,
+                       "n_records_raw":  888,
+                       "n_sequenced":  null,
+                       "n_skipped_no_position":  0,
+                       "profile_id":  "brca_metabric_mutations",
+                       "sample_list_id":  "brca_metabric_sequenced",
+                       "skipped_reasons":  {
+
+                                           }
+                   },
+    "chain":  "A",
+    "ci_method":  "Wilson interval on the observed qualifying fraction, expected fraction held fixed (approximate)",
+    "ci_reason":  null,
+    "dist_mode":  "ca",
+    "distance_definition":  "C-alpha to C-alpha distance to the nearest verified PTM residue",
+    "exclusions":  {
+                       "missense_mutations":  {
+                                                  "low confidence (pLDDT \u003c 70)":  4,
+                                                  "not missense (type Frame_Shift_Del)":  121,
+                                                  "not missense (type Frame_Shift_Ins)":  40,
+                                                  "not missense (type In_Frame_Del)":  29,
+                                                  "not missense (type In_Frame_Ins)":  7,
+                                                  "not missense (type Nonsense_Mutation)":  126,
+                                                  "not missense (type Splice_Region)":  3,
+                                                  "not missense (type Splice_Site)":  52
+                                              },
+                       "synonymous_mutations":  {
+                                                    "not synonymous (type Frame_Shift_Del)":  121,
+                                                    "not synonymous (type Frame_Shift_Ins)":  40,
+                                                    "not synonymous (type In_Frame_Del)":  29,
+                                                    "not synonymous (type In_Frame_Ins)":  7,
+                                                    "not synonymous (type Missense_Mutation)":  510,
+                                                    "not synonymous (type Nonsense_Mutation)":  126,
+                                                    "not synonymous (type Splice_Region)":  3,
+                                                    "not synonymous (type Splice_Site)":  52
+                                                }
+                   },
+    "expected":  29.464,
+    "fold_ci95":  [
+                      0.8684,
+                      1.2492
+                  ],
+    "fold_enrichment":  1.0861,
+    "fold_reason":  null,
+    "highlight":  {
+                      "chain":  "A",
+                      "mutations":  [
+                                        {
+                                            "aa":  "A",
+                                            "change":  "A159D, A159P, A159V",
+                                            "dist":  5.69,
+                                            "pos":  159,
+                                            "resi":  159
+                                        },
+                                        {
+                                            "aa":  "R",
+                                            "change":  "R158L",
+                                            "dist":  6.67,
+                                            "pos":  158,
+                                            "resi":  158
+                                        },
+                                        {
+                                            "aa":  "I",
+                                            "change":  "I195F, I195T",
+                                            "dist":  7.51,
+                                            "pos":  195,
+                                            "resi":  195
+                                        },
+                                        {
+                                            "aa":  "H",
+                                            "change":  "H193L, H193R, H193Y",
+                                            "dist":  7.52,
+                                            "pos":  193,
+                                            "resi":  193
+                                        },
+                                        {
+                                            "aa":  "L",
+                                            "change":  "L194P, L194R",
+                                            "dist":  8.78,
+                                            "pos":  194,
+                                            "resi":  194
+                                        },
+                                        {
+                                            "aa":  "V",
+                                            "change":  "V173G, V173L, V173M",
+                                            "dist":  10.01,
+                                            "pos":  173,
+                                            "resi":  173
+                                        },
+                                        {
+                                            "aa":  "I",
+                                            "change":  "I162M",
+                                            "dist":  10.3,
+                                            "pos":  162,
+                                            "resi":  162
+                                        },
+                                        {
+                                            "aa":  "V",
+                                            "change":  "V157F",
+                                            "dist":  10.31,
+                                            "pos":  157,
+                                            "resi":  157
+                                        },
+                                        {
+                                            "aa":  "V",
+                                            "change":  "V172D",
+                                            "dist":  10.64,
+                                            "pos":  172,
+                                            "resi":  172
+                                        },
+                                        {
+                                            "aa":  "P",
+                                            "change":  "P190T",
+                                            "dist":  10.75,
+                                            "pos":  190,
+                                            "resi":  190
+                                        },
+                                        {
+                                            "aa":  "Y",
+                                            "change":  "Y163C",
+                                            "dist":  12.16,
+                                            "pos":  163,
+                                            "resi":  163
+                                        },
+                                        {
+                                            "aa":  "Y",
+                                            "change":  "Y236C, Y236S",
+                                            "dist":  12.4,
+                                            "pos":  236,
+                                            "resi":  236
+                                        },
+                                        {
+                                            "aa":  "R",
+                                            "change":  "R175G, R175H",
+                                            "dist":  12.9,
+                                            "pos":  175,
+                                            "resi":  175
+                                        },
+                                        {
+                                            "aa":  "M",
+                                            "change":  "M237I",
+                                            "dist":  13.35,
+                                            "pos":  237,
+                                            "resi":  237
+                                        },
+                                        {
+                                            "aa":  "E",
+                                            "change":  "E171G",
+                                            "dist":  14.06,
+                                            "pos":  171,
+                                            "resi":  171
+                                        },
+                                        {
+                                            "aa":  "C",
+                                            "change":  "C238G, C238R, C238S, C238W, C238Y",
+                                            "dist":  15.09,
+                                            "pos":  238,
+                                            "resi":  238
+                                        },
+                                        {
+                                            "aa":  "T",
+                                            "change":  "T155N",
+                                            "dist":  15.9,
+                                            "pos":  155,
+                                            "resi":  155
+                                        },
+                                        {
+                                            "aa":  "M",
+                                            "change":  "M246L, M246R, M246V",
+                                            "dist":  15.92,
+                                            "pos":  246,
+                                            "resi":  246
+                                        },
+                                        {
+                                            "aa":  "G",
+                                            "change":  "G245C, G245D, G245S, G245V",
+                                            "dist":  16.1,
+                                            "pos":  245,
+                                            "resi":  245
+                                        },
+                                        {
+                                            "aa":  "C",
+                                            "change":  "C176F, C176S, C176Y",
+                                            "dist":  16.56,
+                                            "pos":  176,
+                                            "resi":  176
+                                        },
+                                        {
+                                            "aa":  "R",
+                                            "change":  "R249G, R249M, R249S",
+                                            "dist":  16.72,
+                                            "pos":  249,
+                                            "resi":  249
+                                        },
+                                        {
+                                            "aa":  "S",
+                                            "change":  "S106R",
+                                            "dist":  17.35,
+                                            "pos":  106,
+                                            "resi":  106
+                                        },
+                                        {
+                                            "aa":  "H",
+                                            "change":  "H179D, H179L, H179Q, H179R, H179Y",
+                                            "dist":  17.69,
+                                            "pos":  179,
+                                            "resi":  179
+                                        },
+                                        {
+                                            "aa":  "G",
+                                            "change":  "G154S, G154V",
+                                            "dist":  17.83,
+                                            "pos":  154,
+                                            "resi":  154
+                                        },
+                                        {
+                                            "aa":  "N",
+                                            "change":  "N239D, N239I, N239K, N239S",
+                                            "dist":  17.85,
+                                            "pos":  239,
+                                            "resi":  239
+                                        },
+                                        {
+                                            "aa":  "P",
+                                            "change":  "P177R",
+                                            "dist":  18.36,
+                                            "pos":  177,
+                                            "resi":  177
+                                        },
+                                        {
+                                            "aa":  "R",
+                                            "change":  "R248G, R248Q, R248W",
+                                            "dist":  18.82,
+                                            "pos":  248,
+                                            "resi":  248
+                                        },
+                                        {
+                                            "aa":  "P",
+                                            "change":  "P151A, P151H, P151S, P151T",
+                                            "dist":  19.14,
+                                            "pos":  151,
+                                            "resi":  151
+                                        },
+                                        {
+                                            "aa":  "R",
+                                            "change":  "R181C",
+                                            "dist":  19.17,
+                                            "pos":  181,
+                                            "resi":  181
+                                        },
+                                        {
+                                            "aa":  "S",
+                                            "change":  "S241C, S241F, S241Y",
+                                            "dist":  19.49,
+                                            "pos":  241,
+                                            "resi":  241
+                                        },
+                                        {
+                                            "aa":  "G",
+                                            "change":  "G244C, G244S",
+                                            "dist":  19.51,
+                                            "pos":  244,
+                                            "resi":  244
+                                        },
+                                        {
+                                            "aa":  "C",
+                                            "change":  "C242F, C242R, C242S, C242Y",
+                                            "dist":  19.82,
+                                            "pos":  242,
+                                            "resi":  242
+                                        }
+                                    ],
+                      "ptm":  [
+                                  {
+                                      "aa":  "S",
+                                      "plddt":  71.2,
+                                      "pos":  20,
+                                      "resi":  20,
+                                      "site":  "S20"
+                                  },
+                                  {
+                                      "aa":  "S",
+                                      "plddt":  97.4,
+                                      "pos":  127,
+                                      "resi":  127,
+                                      "site":  "S127"
+                                  },
+                                  {
+                                      "aa":  "S",
+                                      "plddt":  97.9,
+                                      "pos":  215,
+                                      "resi":  215,
+                                      "site":  "S215"
+                                  },
+                                  {
+                                      "aa":  "S",
+                                      "plddt":  98.2,
+                                      "pos":  269,
+                                      "resi":  269,
+                                      "site":  "S269"
+                                  }
+                              ]
+                  },
+    "hits":  [
+                 {
+                     "dist":  5.69,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  32,
+                     "n_mutations":  8,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  98.6,
+                     "pos":  159,
+                     "protein_change":  [
+                                            "A159D",
+                                            "A159P",
+                                            "A159V"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "A"
+                 },
+                 {
+                     "dist":  6.67,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  31,
+                     "n_mutations":  1,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  98.6,
+                     "pos":  158,
+                     "protein_change":  [
+                                            "R158L"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "R"
+                 },
+                 {
+                     "dist":  7.51,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  20,
+                     "n_mutations":  6,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  97.8,
+                     "pos":  195,
+                     "protein_change":  [
+                                            "I195F",
+                                            "I195T"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "I"
+                 },
+                 {
+                     "dist":  7.52,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  22,
+                     "n_mutations":  10,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  96.0,
+                     "pos":  193,
+                     "protein_change":  [
+                                            "H193L",
+                                            "H193R",
+                                            "H193Y"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "H"
+                 },
+                 {
+                     "dist":  8.78,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  21,
+                     "n_mutations":  9,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  97.3,
+                     "pos":  194,
+                     "protein_change":  [
+                                            "L194P",
+                                            "L194R"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "L"
+                 },
+                 {
+                     "dist":  10.01,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  42,
+                     "n_mutations":  6,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  97.1,
+                     "pos":  173,
+                     "protein_change":  [
+                                            "V173G",
+                                            "V173L",
+                                            "V173M"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "V"
+                 },
+                 {
+                     "dist":  10.3,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  35,
+                     "n_mutations":  1,
+                     "nearest_ptm_pos":  269,
+                     "plddt":  98.0,
+                     "pos":  162,
+                     "protein_change":  [
+                                            "I162M"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "I"
+                 },
+                 {
+                     "dist":  10.31,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  30,
+                     "n_mutations":  2,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  98.6,
+                     "pos":  157,
+                     "protein_change":  [
+                                            "V157F"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "V"
+                 },
+                 {
+                     "dist":  10.64,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  43,
+                     "n_mutations":  1,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  96.3,
+                     "pos":  172,
+                     "protein_change":  [
+                                            "V172D"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "V"
+                 },
+                 {
+                     "dist":  10.75,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  25,
+                     "n_mutations":  1,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  92.9,
+                     "pos":  190,
+                     "protein_change":  [
+                                            "P190T"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "P"
+                 },
+                 {
+                     "dist":  12.16,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  36,
+                     "n_mutations":  7,
+                     "nearest_ptm_pos":  269,
+                     "plddt":  98.3,
+                     "pos":  163,
+                     "protein_change":  [
+                                            "Y163C"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "Y"
+                 },
+                 {
+                     "dist":  12.4,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  21,
+                     "n_mutations":  3,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  98.0,
+                     "pos":  236,
+                     "protein_change":  [
+                                            "Y236C",
+                                            "Y236S"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "Y"
+                 },
+                 {
+                     "dist":  12.9,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  40,
+                     "n_mutations":  41,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  96.6,
+                     "pos":  175,
+                     "protein_change":  [
+                                            "R175G",
+                                            "R175H"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "R"
+                 },
+                 {
+                     "dist":  13.35,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  22,
+                     "n_mutations":  3,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  96.9,
+                     "pos":  237,
+                     "protein_change":  [
+                                            "M237I"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "M"
+                 },
+                 {
+                     "dist":  14.06,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  44,
+                     "n_mutations":  1,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  95.7,
+                     "pos":  171,
+                     "protein_change":  [
+                                            "E171G"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "E"
+                 },
+                 {
+                     "dist":  15.09,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  23,
+                     "n_mutations":  8,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  97.2,
+                     "pos":  238,
+                     "protein_change":  [
+                                            "C238G",
+                                            "C238R",
+                                            "C238S",
+                                            "C238W",
+                                            "C238Y"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "C"
+                 },
+                 {
+                     "dist":  15.9,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  28,
+                     "n_mutations":  2,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  98.4,
+                     "pos":  155,
+                     "protein_change":  [
+                                            "T155N"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "T"
+                 },
+                 {
+                     "dist":  15.92,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  23,
+                     "n_mutations":  5,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  97.1,
+                     "pos":  246,
+                     "protein_change":  [
+                                            "M246L",
+                                            "M246R",
+                                            "M246V"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "M"
+                 },
+                 {
+                     "dist":  16.1,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  24,
+                     "n_mutations":  18,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  94.8,
+                     "pos":  245,
+                     "protein_change":  [
+                                            "G245C",
+                                            "G245D",
+                                            "G245S",
+                                            "G245V"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "G"
+                 },
+                 {
+                     "dist":  16.56,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  39,
+                     "n_mutations":  4,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  96.5,
+                     "pos":  176,
+                     "protein_change":  [
+                                            "C176F",
+                                            "C176S",
+                                            "C176Y"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "C"
+                 },
+                 {
+                     "dist":  16.72,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  20,
+                     "n_mutations":  4,
+                     "nearest_ptm_pos":  269,
+                     "plddt":  97.8,
+                     "pos":  249,
+                     "protein_change":  [
+                                            "R249G",
+                                            "R249M",
+                                            "R249S"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "R"
+                 },
+                 {
+                     "dist":  17.35,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  21,
+                     "n_mutations":  1,
+                     "nearest_ptm_pos":  269,
+                     "plddt":  97.1,
+                     "pos":  106,
+                     "protein_change":  [
+                                            "S106R"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "S"
+                 },
+                 {
+                     "dist":  17.69,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  36,
+                     "n_mutations":  11,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  94.2,
+                     "pos":  179,
+                     "protein_change":  [
+                                            "H179D",
+                                            "H179L",
+                                            "H179Q",
+                                            "H179R",
+                                            "H179Y"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "H"
+                 },
+                 {
+                     "dist":  17.83,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  27,
+                     "n_mutations":  2,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  96.9,
+                     "pos":  154,
+                     "protein_change":  [
+                                            "G154S",
+                                            "G154V"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "G"
+                 },
+                 {
+                     "dist":  17.85,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  24,
+                     "n_mutations":  8,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  98.2,
+                     "pos":  239,
+                     "protein_change":  [
+                                            "N239D",
+                                            "N239I",
+                                            "N239K",
+                                            "N239S"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "N"
+                 },
+                 {
+                     "dist":  18.36,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  38,
+                     "n_mutations":  1,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  95.2,
+                     "pos":  177,
+                     "protein_change":  [
+                                            "P177R"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "P"
+                 },
+                 {
+                     "dist":  18.82,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  21,
+                     "n_mutations":  59,
+                     "nearest_ptm_pos":  127,
+                     "plddt":  97.2,
+                     "pos":  248,
+                     "protein_change":  [
+                                            "R248G",
+                                            "R248Q",
+                                            "R248W"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "R"
+                 },
+                 {
+                     "dist":  19.14,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  24,
+                     "n_mutations":  4,
+                     "nearest_ptm_pos":  269,
+                     "plddt":  97.2,
+                     "pos":  151,
+                     "protein_change":  [
+                                            "P151A",
+                                            "P151H",
+                                            "P151S",
+                                            "P151T"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "P"
+                 },
+                 {
+                     "dist":  19.17,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  34,
+                     "n_mutations":  1,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  91.6,
+                     "pos":  181,
+                     "protein_change":  [
+                                            "R181C"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "R"
+                 },
+                 {
+                     "dist":  19.49,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  26,
+                     "n_mutations":  9,
+                     "nearest_ptm_pos":  127,
+                     "plddt":  97.8,
+                     "pos":  241,
+                     "protein_change":  [
+                                            "S241C",
+                                            "S241F",
+                                            "S241Y"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "S"
+                 },
+                 {
+                     "dist":  19.51,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  25,
+                     "n_mutations":  3,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  93.8,
+                     "pos":  244,
+                     "protein_change":  [
+                                            "G244C",
+                                            "G244S"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "G"
+                 },
+                 {
+                     "dist":  19.82,
+                     "eligible":  true,
+                     "is_ptm":  false,
+                     "mapping_verified":  true,
+                     "min_seq_sep":  27,
+                     "n_mutations":  9,
+                     "nearest_ptm_pos":  215,
+                     "plddt":  97.4,
+                     "pos":  242,
+                     "protein_change":  [
+                                            "C242F",
+                                            "C242R",
+                                            "C242S",
+                                            "C242Y"
+                                        ],
+                     "qualifies":  true,
+                     "residue":  "C"
+                 }
+             ],
+    "mapping_warning":  null,
+    "mean_plddt":  75.1,
+    "method":  "AlphaFold C-alpha model in UniProt numbering (chain A), residues with pLDDT \u003e= 70. Distance = C-alpha to C-alpha distance to the nearest verified PTM residue. A residue qualifies if it is within 20.0 A of a verified PTM residue and \u003e= 20 residues from every verified PTM residue in sequence. Missense mutations from the selected cBioPortal study are kept only if their reference residue matches the model, then collapsed to distinct positions. The null universe is the eligible residues only (confident, not PTM, \u003e= min_sep from all PTMs). Exact hypergeometric tail plus an amino-acid-composition-matched permutation null (requested 0, seed 1) drawn from eligible residues. Neither null models trinucleotide context, clonality or mutational signatures; distance enrichment alone does not show functional effect.",
+    "min_sep":  20,
+    "n_confident_residues":  235,
+    "n_eligible_residues":  112,
+    "n_missense":  510,
+    "n_missense_mapped":  506,
+    "n_mutated_no_coordinates":  0,
+    "n_mutated_positions":  44,
+    "n_mutated_sequence_proximal":  48,
+    "n_observed":  32,
+    "n_perm_requested":  0,
+    "n_permutations":  0,
+    "n_positions_all":  92,
+    "n_ptm_confident":  4,
+    "n_ptm_records":  15,
+    "n_qualifying_residues":  75,
+    "n_synonymous":  0,
+    "n_synonymous_positions":  0,
+    "negative_control":  {
+                             "ci_method":  "Wilson interval on the observed qualifying fraction, expected fraction held fixed (approximate)",
+                             "ci_reason":  "no mutated eligible position",
+                             "expected":  null,
+                             "fold_ci95":  null,
+                             "fold_enrichment":  null,
+                             "fold_reason":  "no mutated eligible position",
+                             "n_confident_residues":  235,
+                             "n_eligible_residues":  112,
+                             "n_mutated_no_coordinates":  0,
+                             "n_mutated_positions":  0,
+                             "n_mutated_sequence_proximal":  0,
+                             "n_observed":  0,
+                             "n_permutations":  0,
+                             "n_qualifying_residues":  75,
+                             "note":  "Untestable: no missense mutation falls on an eligible (confident, sequence-distant) residue.",
+                             "p_perm":  null,
+                             "p_perm_note":  "Permutation test not estimable: Untestable: no missense mutation falls on an eligible (confident, sequence-distant) residue.",
+                             "p_value":  null,
+                             "p_value_reason":  "Untestable: no missense mutation falls on an eligible (confident, sequence-distant) residue."
+                         },
+    "negative_control_note":  "Control not estimable: the study returned no synonymous/silent records for this gene (cBioPortal studies commonly omit them at import).",
+    "note":  null,
+    "p_perm":  null,
+    "p_perm_note":  "Permutation test not estimable: permutation test disabled (0 permutations requested).",
+    "p_value":  0.2017367077109562,
+    "p_value_reason":  null,
+    "plddt_min":  70.0,
+    "protein":  {
+                    "gene":  "TP53",
+                    "length":  393,
+                    "name":  "Cellular tumor antigen p53",
+                    "uniprot":  "P04637"
+                },
+    "ptm_exclusions":  [
+                           {
+                               "reason":  "low confidence (pLDDT 39 \u003c 70)",
+                               "site":  "S6"
+                           },
+                           {
+                               "reason":  "low confidence (pLDDT 41 \u003c 70)",
+                               "site":  "S9"
+                           },
+                           {
+                               "reason":  "low confidence (pLDDT 62 \u003c 70)",
+                               "site":  "S15"
+                           },
+                           {
+                               "reason":  "low confidence (pLDDT 68 \u003c 70)",
+                               "site":  "T18"
+                           },
+                           {
+                               "reason":  "low confidence (pLDDT 34 \u003c 70)",
+                               "site":  "S33"
+                           },
+                           {
+                               "reason":  "low confidence (pLDDT 34 \u003c 70)",
+                               "site":  "S37"
+                           },
+                           {
+                               "reason":  "low confidence (pLDDT 40 \u003c 70)",
+                               "site":  "T55"
+                           },
+                           {
+                               "reason":  "low confidence (pLDDT 69 \u003c 70)",
+                               "site":  "S183"
+                           },
+                           {
+                               "reason":  "low confidence (pLDDT 39 \u003c 70)",
+                               "site":  "S315"
+                           },
+                           {
+                               "reason":  "low confidence (pLDDT 38 \u003c 70)",
+                               "site":  "S371"
+                           },
+                           {
+                               "reason":  "low confidence (pLDDT 53 \u003c 70)",
+                               "site":  "S392"
+                           }
+                       ],
+    "retrieval":  {
+                      "complete":  true,
+                      "entrez_gene_id":  7157,
+                      "gene":  "TP53",
+                      "n_malformed_records":  0,
+                      "n_sequenced":  null,
+                      "page_size":  50000,
+                      "pages":  1,
+                      "profile_candidates":  [
+                                                 "brca_metabric_mutations"
+                                             ],
+                      "profile_id":  "brca_metabric_mutations",
+                      "sample_list_id":  "brca_metabric_sequenced",
+                      "status":  "ok",
+                      "study_id":  "brca_metabric",
+                      "warnings":  [
+
+                                   ]
+                  },
+    "seed":  1,
+    "sites":  [
+                  {
+                      "expected":  0.0,
+                      "fold_ci95":  null,
+                      "fold_enrichment":  null,
+                      "hit_positions":  [
+
+                                        ],
+                      "n_contacts":  5,
+                      "n_mutated_in_neighbourhood":  0,
+                      "n_mutated_in_universe":  92,
+                      "n_neighbourhood":  0,
+                      "n_permutations":  0,
+                      "n_universe":  229,
+                      "p_perm":  null,
+                      "p_perm_note":  "Permutation test not estimable: empty neighbourhood (no sequence-distant residue within the radius).",
+                      "p_value":  null,
+                      "p_value_reason":  "empty neighbourhood (no sequence-distant residue within the radius)",
+                      "pos":  20,
+                      "ptm_type":  "Phosphorylation",
+                      "q_bh_protein":  null,
+                      "q_perm_protein":  null,
+                      "site":  "S20"
+                  },
+                  {
+                      "expected":  22.571,
+                      "fold_ci95":  [
+                                        0.9425,
+                                        1.6703
+                                    ],
+                      "fold_enrichment":  1.2848,
+                      "hit_positions":  [
+                                            159,
+                                            162,
+                                            163,
+                                            195,
+                                            232,
+                                            234,
+                                            236,
+                                            239,
+                                            241,
+                                            248,
+                                            249,
+                                            250,
+                                            251,
+                                            255,
+                                            267,
+                                            270,
+                                            271,
+                                            272,
+                                            273,
+                                            274,
+                                            275,
+                                            276,
+                                            277,
+                                            278,
+                                            280,
+                                            281,
+                                            282,
+                                            285,
+                                            286
+                                        ],
+                      "n_contacts":  93,
+                      "n_mutated_in_neighbourhood":  29,
+                      "n_mutated_in_universe":  79,
+                      "n_neighbourhood":  56,
+                      "n_permutations":  0,
+                      "n_universe":  196,
+                      "p_perm":  null,
+                      "p_perm_note":  "Permutation test not estimable: permutation test disabled (0 permutations requested).",
+                      "p_value":  0.02848119640093038,
+                      "p_value_reason":  null,
+                      "pos":  127,
+                      "ptm_type":  "Phosphorylation",
+                      "q_bh_protein":  0.042721794601395566,
+                      "q_perm_protein":  null,
+                      "site":  "S127"
+                  },
+                  {
+                      "expected":  40.408,
+                      "fold_ci95":  [
+                                        0.971,
+                                        1.3866
+                                    ],
+                      "fold_enrichment":  1.1879,
+                      "hit_positions":  [
+                                            110,
+                                            111,
+                                            132,
+                                            135,
+                                            137,
+                                            141,
+                                            154,
+                                            155,
+                                            157,
+                                            158,
+                                            159,
+                                            162,
+                                            163,
+                                            171,
+                                            172,
+                                            173,
+                                            175,
+                                            176,
+                                            177,
+                                            179,
+                                            181,
+                                            190,
+                                            193,
+                                            194,
+                                            195,
+                                            236,
+                                            237,
+                                            238,
+                                            239,
+                                            242,
+                                            244,
+                                            245,
+                                            246,
+                                            249,
+                                            250,
+                                            251,
+                                            255,
+                                            257,
+                                            258,
+                                            259,
+                                            262,
+                                            266,
+                                            267,
+                                            270,
+                                            271,
+                                            272,
+                                            273,
+                                            274
+                                        ],
+                      "n_contacts":  129,
+                      "n_mutated_in_neighbourhood":  48,
+                      "n_mutated_in_universe":  80,
+                      "n_neighbourhood":  99,
+                      "n_permutations":  0,
+                      "n_universe":  196,
+                      "p_perm":  null,
+                      "p_perm_note":  "Permutation test not estimable: permutation test disabled (0 permutations requested).",
+                      "p_value":  0.019463336486540337,
+                      "p_value_reason":  null,
+                      "pos":  215,
+                      "ptm_type":  "Phosphorylation",
+                      "q_bh_protein":  0.042721794601395566,
+                      "q_perm_protein":  null,
+                      "site":  "S215"
+                  },
+                  {
+                      "expected":  37.668,
+                      "fold_ci95":  [
+                                        0.9254,
+                                        1.3338
+                                    ],
+                      "fold_enrichment":  1.1415,
+                      "hit_positions":  [
+                                            106,
+                                            110,
+                                            111,
+                                            125,
+                                            126,
+                                            127,
+                                            131,
+                                            132,
+                                            134,
+                                            135,
+                                            136,
+                                            137,
+                                            141,
+                                            151,
+                                            155,
+                                            157,
+                                            158,
+                                            159,
+                                            162,
+                                            163,
+                                            171,
+                                            172,
+                                            173,
+                                            193,
+                                            194,
+                                            195,
+                                            197,
+                                            205,
+                                            208,
+                                            211,
+                                            214,
+                                            215,
+                                            216,
+                                            220,
+                                            232,
+                                            234,
+                                            236,
+                                            237,
+                                            238,
+                                            239,
+                                            246,
+                                            248,
+                                            249
+                                        ],
+                      "n_contacts":  135,
+                      "n_mutated_in_neighbourhood":  43,
+                      "n_mutated_in_universe":  69,
+                      "n_neighbourhood":  107,
+                      "n_permutations":  0,
+                      "n_universe":  196,
+                      "p_perm":  null,
+                      "p_perm_note":  "Permutation test not estimable: permutation test disabled (0 permutations requested).",
+                      "p_value":  0.07300131499912423,
+                      "p_value_reason":  null,
+                      "pos":  269,
+                      "ptm_type":  "Phosphorylation",
+                      "q_bh_protein":  0.07300131499912423,
+                      "q_perm_protein":  null,
+                      "site":  "S269"
+                  }
+              ],
+    "structure":  "AlphaFold AF-P04637-F1 (PREDICTED; residues with pLDDT \u003e= 70 only)",
+    "structure_id":  "AF-P04637-F1",
+    "structure_label":  "AlphaFold PREDICTED model (not experimental)",
+    "structure_source":  "alphafold",
+    "study":  "brca_metabric",
+    "threshold":  20.0
+}

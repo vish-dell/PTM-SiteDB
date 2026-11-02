@@ -1,0 +1,1 @@
+document.querySelectorAll('a[href^="http"]').forEach(a=>a.rel='noopener');

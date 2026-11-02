@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Connection Check · PTM-SiteDB{% endblock %}
+{% block content %}
+<section class="page-header"><span class="eyebrow">DIAGNOSTICS</span><h1>Connection Check</h1><p>Check whether the local website, SQLite database and expanded research data files are connected. Missing sources are reported instead of replaced with sample data.</p></section>
+<div class="stats-grid">
+<div class="stat-card"><div class="stat-label">Local SQLite database</div><div class="stat-value">{{ 'Connected' if db_path else 'Unavailable' }}</div><div class="stat-note">{{ db_path }}</div></div>
+<div class="stat-card"><div class="stat-label">PTM records</div><div class="stat-value">{{ site_count }}</div><div class="stat-note">{{ gene_count }} distinct genes</div></div>
+<div class="stat-card"><div class="stat-label">Data readiness</div><div class="stat-value">{{ 'Ready' if site_count else 'Not loaded' }}</div><div class="stat-note">All analysis actions depend on real input records.</div></div>
+</div>
+<div class="panel"><h2>Latest import attempt</h2>{% if last_sync %}<p><b>Time:</b> {{ last_sync.synced_at }}</p><p><b>Source:</b> {{ last_sync.source }}</p><p><b>Pages:</b> {{ last_sync.pages or 0 }} · <b>Parsed:</b> {{ last_sync.records_parsed or 0 }} · <b>New records:</b> {{ last_sync.records_new or 0 }}</p>{% else %}<p>No import has been recorded yet.</p>{% endif %}</div>
+<div class="panel"><h2>Research data files</h2><p class="muted">Location: <code>{{ research_root }}</code></p><div class="table-wrap compact"><table><thead><tr><th>File</th><th>Status</th><th>Bytes</th></tr></thead><tbody>{% for label,v in research_ready.items() %}<tr><td>{{ label }}</td><td><span class="badge {{ 'ok' if v.exists and v.bytes > 0 else 'warn' }}">{{ 'Loaded' if v.exists and v.bytes > 0 else 'Missing / empty' }}</span></td><td>{{ v.bytes }}</td></tr>{% endfor %}</tbody></table></div></div>
+<div class="panel"><h2>Fix an empty local database</h2><p>From the folder containing <code>app.py</code>, run this in PowerShell:</p><pre><code>python sync_data.py</code></pre><p>If the original PTM-SiteDB source server is unreachable, import a real tab-separated export instead:</p><pre><code>python import_tsv.py .\ptm_sitedb.tsv</code></pre><p>The export needs the columns <code>gene</code>, <code>uniprot</code>, <code>ptm_type</code>, and <code>site</code>. Never copy example or synthetic records into the database.</p><p><a class="btn btn-secondary" href="{{ url_for('api_health') }}">Open local health JSON</a> <a class="btn btn-primary" href="{{ url_for('help_page') }}">Help</a></p></div>
+{% endblock %}

@@ -1,0 +1,2 @@
+PTM-SiteDB Research Extension v1.1 (repair build 2026-10-10)
+Analysis controls v1.1 added 2026-10-11 (see CHANGELOG_v1_1.md).

@@ -1,0 +1,19 @@
+{% extends "base.html" %}{% block title %}{{title}} — Phosphoproteome of Human Cancer{% endblock %}
+{% block head %}{% block fhead %}{% endblock %}{% endblock %}
+{% block content %}
+<div class="page-header"><span class="eyebrow">{{icon}} ANALYSIS MODULE</span><h2>{{title}}</h2><p>{{blurb}}</p></div>
+{% if db_empty %}<div class="notice warn"><b>The local database is empty.</b> This project never uses sample data. Run <code>python sync_data.py</code> (or <code>python import_tsv.py export.tsv</code>) to import the real PTM-SiteDB records, then reload.</div>{% endif %}
+<div class="feature-structure-action">
+  <a id="feature-viewer-link" class="btn btn-secondary btn-sm" href="{{url_for('viewer',uniprot=selected)}}">Open 3D structure for selected protein</a>
+  <span class="stat-note">Experimental coordinates are preferred; AlphaFold predictions are labelled separately. Sites are highlighted only after residue mapping is checked.</span>
+</div>
+<div class="filter-bar">
+  <div class="form-group wide"><label>Protein</label>
+    <select id="protein-select">{% for p in proteins %}<option value="{{p.uniprot}}" {{'selected' if p.uniprot==selected}}>{{p.gene}} · {{p.uniprot}} · {{p.sites}} record{{'' if p.sites==1 else 's'}}</option>{% endfor %}</select></div>
+  {% block controls %}{% endblock %}
+  <div class="form-actions"><button class="btn btn-primary" id="run" type="button">Run analysis</button></div>
+</div>
+<div id="result"></div>
+{% endblock %}
+{% block scripts %}<script>window.FEATURE={page:{{page|tojson}},selected:{{selected|tojson}},dbEmpty:{{db_empty|tojson}}};</script>
+<script src="{{url_for('static',filename='js/features.js')}}?v=20261102-sticky"></script>{% endblock %}

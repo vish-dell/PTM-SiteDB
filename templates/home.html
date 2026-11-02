@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block title %}Decode the Phosphoproteome of Human Cancer{% endblock %}
+{% block content %}
+<section class="hero"><div><span class="eyebrow">EVIDENCE-FIRST · NO SYNTHETIC DATA</span><h1>Decode the Phosphoproteome of Human Cancer</h1><p>Search experimentally supported PTM sites in cancer-relevant proteins — then go further: find PTM hotspots, measure 3D distances, trace kinase networks, test conservation, overlay cancer mutations, explore crosstalk and generate evidence-linked research questions.</p><div class="hero-actions"><a class="btn btn-primary" href="{{url_for('features.features_index')}}">Open Analysis Suite</a><a class="btn btn-secondary" href="{{url_for('search')}}">Search PTM Sites</a><a class="btn btn-secondary" href="{{url_for('browse')}}">Browse</a></div></div><div class="hero-art"><div class="orbit"></div><div class="hero-node">PTM</div></div></section>
+{% if db_empty %}<div class="notice warn"><b>No PTM records imported yet.</b> Use <code>Connection Check</code> to inspect the local database, then run <code>python sync_data.py</code> or import a genuine export with <code>python import_tsv.py export.tsv</code>. The site never ships or invents sample records. <a href="{{ url_for('connection_check') }}">Open connection diagnostics →</a></div>{% endif %}
+<div class="stats-grid">
+{% for key,label in [('sites','PTM Sites'),('proteins','Proteins'),('kinases','Kinases'),('publications','Publications')] %}
+<div class="stat-card"><div class="stat-label">{{label}}</div><div class="stat-value">{{stats[key]}}</div><div class="stat-note">calculated from local dataset</div></div>
+{% endfor %}
+</div>
+<h3 class="sect">Analysis Suite</h3>
+<div class="feature-grid mod-grid">
+{% for ep,label,icon,desc in FEATURES %}<a class="feature modcard" href="{{url_for('features.'+ep+'_page')}}"><span class="modicon">{{icon}}</span><b>{{label}}</b><p>{{desc}}</p></a>{% endfor %}
+</div>
+{% endblock %}

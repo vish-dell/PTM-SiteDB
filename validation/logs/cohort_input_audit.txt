@@ -1,0 +1,6 @@
+Recorded MAF hashes:
+  TCGA_PAAD: 9cb009b18e3ea2efbd7ae124c7a78490135e9a9e4288b1a5ee904f5546fa7d02
+  TCGA_PRAD: 9cb009b18e3ea2efbd7ae124c7a78490135e9a9e4288b1a5ee904f5546fa7d02
+Duplicate groups (NOT independent cohorts): [['TCGA_PAAD', 'TCGA_PRAD']]
+TCGA_PAAD.maf: rows=126252 samples=1009 sha256=9cb009b18e3ea2ef… top TSS codes=[('BH', 15492), ('D8', 15242), ('AN', 13025), ('AC', 10049), ('A8', 9581)]
+TCGA_PRAD.maf: rows=126252 samples=1009 sha256=9cb009b18e3ea2ef… top TSS codes=[('BH', 15492), ('D8', 15242), ('AN', 13025), ('AC', 10049), ('A8', 9581)]

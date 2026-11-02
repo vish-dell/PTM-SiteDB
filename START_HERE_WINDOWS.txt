@@ -1,0 +1,12 @@
+PTM-SiteDB - Windows quick start
+================================
+1. Extract the zip into a SHORT folder, e.g. C:\ptm   (long folder names break Windows: 260-character limit).
+   Best: open PowerShell and run   tar -xf PTM-SiteDB_v4_Clean.zip -C C:\
+   Do not use "Extract All" into Downloads\<name>\<name>\...
+2. Double-click START_WEBSITE.bat  (or run  .\INSTALL_AND_RUN.ps1  in PowerShell).
+   First run creates a Python 3.12 environment (.venv312), installs requirements, syncs the database and starts the site.
+   The script checks the folder is complete and repairs a broken .venv312 automatically.
+3. Open http://127.0.0.1:5000/            (main database site)
+        http://127.0.0.1:5000/research/   (research module)
+4. Research analysis (needs real data you download yourself): see research\README.md and research\RUN_TWO_COHORTS.ps1.
+   No biological result is claimed until two real cohorts have been run and reported (null results included).

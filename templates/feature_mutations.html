@@ -1,0 +1,3 @@
+{% extends "feature_base.html" %}
+
+{% block controls %}<div class="form-group"><label>± window (residues)</label><input id="p-window" type="number" min="0" max="10" value="0"></div><div class="form-group wide"><label>cBioPortal cancer study (optional)</label><input id="p-study" list="study-list" placeholder="Type to search studies, e.g. brca_tcga"><datalist id="study-list"></datalist><span id="study-status" class="stat-note"></span></div>{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}PTM-SiteDB Integrated Explorer{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <span class="eyebrow">REAL-DATA · STRUCTURE-GUIDED CANCER ANALYSIS</span>
+    <h1>A PTM-anchored analysis workflow designed for <span>200+ genes</span>.</h1>
+    <p class="lead">An auditable workflow for experimental PTM evidence, MANE-aware missense mapping, CA-distance analysis, trinucleotide-opportunity matching, external driver benchmarking and independent cohort validation.</p>
+    <div class="actions"><a class="button primary" href="{{ url_for('upload_analysis') }}">Run a cohort</a><a class="button" href="{{ url_for('methodology') }}">Read primary hypothesis</a><a class="button" href="{{ url_for('help_page') }}">Setup guide</a></div>
+  </div>
+  <div class="hero-card">
+    <div class="mini-label">PRE-SPECIFIED PRIMARY HYPOTHESIS</div>
+    <div class="quote">Among testable PTM-bearing genes, IntOGen-listed drivers have a higher distribution of gene-level −log10(SBS96-null p-values) than PTM-bearing genes not listed in the selected IntOGen release.</div>
+    <p class="muted">Primary settings: sequence separation ≥8 residues, CA distance ≤10 Å, 5,000 permutations, seed 1, BH q&lt;0.05. Secondary settings do not replace the primary result.</p>
+  </div>
+</section>
+
+<section class="stats-grid">
+  <div class="stat"><b>{{ status.get('ptm_records',0) }}</b><span>Experimental PTM records imported</span></div>
+  <div class="stat"><b>{{ status.get('ptm_bearing_genes',0) }}</b><span>Genes with experimental PTM evidence</span></div>
+  <div class="stat"><b>{{ status.get('driver_genes_with_ptm_available',status.get('driver_panel',0)) }}</b><span>IntOGen-listed PTM-bearing genes</span></div>
+  <div class="stat"><b>{{ status.get('panel_genes',0) }}</b><span>Genes in benchmark panel</span></div>
+</section>
+
+<section class="grid-3">
+  <article class="card"><h3>01 · Scale the evidence</h3><p>Bootstrap the official dbPTM experimental phosphorylation table and the official IntOGen driver archive; the archive-declared release is recorded in the source manifest. The panel is based on observed source intersections and reports when the 200-gene target was not reached.</p></article>
+  <article class="card"><h3>02 · Match mutation opportunity</h3><p>Enumerate all missense single-nucleotide opportunities for one selected MANE/Ensembl-canonical transcript per gene. The null preserves each gene's observed SBS96 context counts.</p></article>
+  <article class="card"><h3>03 · Keep the inference honest</h3><p>Missing structures, transcript mismatches and absent context opportunities become explicit QC statuses. They are not treated as negative biological results.</p></article>
+</section>
+
+<section class="card wide">
+  <div class="split"><div><h2>Analysis input readiness</h2><p class="muted">All biological result tables are created from real source files and user-supplied cohorts. Full dbPTM evidence is browsed separately from the subset whose sites map onto the chosen transcript/structure coordinates. No synthetic biological results ship with the website.</p></div><a class="button" href="{{ url_for('download_page') }}">Inspect files</a></div>
+  <div class="chips">
+    <span class="chip">PTM / IntOGen: {{ 'Ready' if status.get('ptm_records',0) and status.get('intogen_genes',0) else 'Not loaded' }}</span>
+    <span class="chip">200+ panel: {{ 'Ready' if status.get('panel_genes',0) >= 200 else 'Not confirmed' }}</span>
+    <span class="chip">Coding opportunities: {{ 'Ready' if status.get('opportunity_map_ready') else 'Needs GTF + FASTA prep' }}</span>
+    <span class="chip">CA coordinates: {{ 'Ready' if status.get('coordinates_ready') else 'Needs structure prep' }}</span>
+    <span class="chip">Reference FASTA: {{ 'Ready' if status.get('reference_fasta_ready') else 'Not configured' }}</span>
+  </div>
+  {% if status.get('panel_genes',0) < 200 %}<div class="notice">The real source intersection currently contains fewer than 200 genes. Review panel_summary.json; the website will not relabel a smaller panel as 200+.</div>{% endif %}
+  
+<details class="manifest-details">
+  <summary>View technical details (source manifest)</summary>
+  <pre class="codeblock">{{ manifest | tojson(indent=2) }}</pre>
+</details>
+
+</section>
+
+<section class="card wide">
+  <h2>Legacy small-panel result (kept separate)</h2>
+  <p>The prior six-gene analysis reported no significant protein-level primary enrichment in the four testable genes (TP53, EGFR, AKT1 and CTNNB1). TP53 S127 was hypothesis-generating and did not independently replicate. This historical result is not substituted for results from the new expanded panel; run new cohorts to populate those analyses.</p>
+</section>
+{% endblock %}

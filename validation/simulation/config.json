@@ -1,0 +1,8 @@
+{"label":"SYNTHETIC VALIDATION DATA - not biological data, never written to the production database",
+ "algorithm_under_test":"services.proximity.proximity_test (exact hypergeometric upper tail, P(X>=k)) and hyper_sf",
+ "master_seed":20261025,
+ "alphas":[0.01,0.05,0.10],
+ "null":{"N":[100,300,1000],"qualifying_fraction":[0.05,0.15],"n_mutated":[5,10,30,100],"replicates":4000},
+ "planted":{"N":300,"qualifying_fraction":0.10,"relative_risk":[1,1.5,2,3,5],"n_mutated":[10,20,50,100],"replicates":2000},
+ "regional_confounding":{"N":300,"block":30,"sigma":[0,0.5,1.0,1.5],"qualifying_fraction":0.10,"n_mutated":[30],"replicates":3000},
+ "permutation_crosscheck":{"replicates":300,"n_perm":499,"N":120,"qualifying_fraction":0.15,"n_mutated":15}}

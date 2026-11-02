@@ -1,0 +1,41 @@
+{% extends "base.html" %}{% block title %}{{protein.gene}} — PTM-SiteDB{% endblock %}{% block content %}
+<div class="page-header"><span class="eyebrow">PROTEIN DETAIL</span><h2>{{protein.gene}}</h2><p><span class="mono">{{protein.uniprot}}</span> · {{rows|length}} PTM records{% if protein.length %} · {{'{:,}'.format(protein.length)}} aa{% endif %}</p></div>
+<div class="protein-actions"><a class="btn btn-primary" href="{{url_for('viewer',uniprot=protein.uniprot)}}">Open 3D Structure / PTM Viewer</a><a class="btn btn-secondary" href="https://www.uniprot.org/uniprotkb/{{protein.uniprot}}" target="_blank">Open UniProt</a></div>
+<div class="modlinks"><span>Analyse this protein:</span>{% for ep,label,icon,desc in FEATURES %}<a class="chip big" href="{{url_for('features.'+ep+'_page', uniprot=protein.uniprot)}}">{{icon}} {{label}}</a>{% endfor %}</div>
+
+{% if protein.length %}
+<div class="pm-wrap">
+  <div class="pm-header">
+    <div><h3>Proteomic Map (Circular)</h3><p class="stat-note">PTM landscape, kinase relationships, and cancer associations</p></div>
+    <button class="btn btn-secondary btn-sm" id="pm-export">↓ Export PNG</button>
+  </div>
+  <div class="pm-grid">
+    <div class="pm-main">
+      <div class="pm-circle-card">
+        <svg id="pm-svg" viewBox="0 0 480 480" width="100%"></svg>
+        <div id="pm-domain-legend" class="pm-legend"></div>
+      </div>
+      <div class="pm-linear-card">
+        <h4>Linear PTM Landscape</h4>
+        <p class="stat-note">Click any site to highlight it above and see details.</p>
+        <svg id="pm-linear-svg" viewBox="0 0 900 70" width="100%" height="70"></svg>
+      </div>
+    </div>
+    <div class="pm-side">
+      <div class="pm-panel" id="pm-selected-panel"><h4>Selected PTM Site</h4><div class="pm-empty">Click a PTM marker to see details.</div></div>
+      <div class="pm-panel" id="pm-kinase-panel"><h4>Kinase Relationship</h4><div class="pm-empty">Select a PTM site first.</div></div>
+      <div class="pm-panel" id="pm-disease-panel"><h4>Cancer / Disease Associations</h4><div class="pm-empty">No disease associations recorded.</div></div>
+    </div>
+  </div>
+  <div class="pm-summary-grid" id="pm-summary"></div>
+</div>
+<script>window.PROTEOMIC_MAP = {{ pmdata | tojson }};</script>
+<script src="{{url_for('static',filename='js/circmap.js')}}"></script>
+{% endif %}
+
+{% if rows %}
+<div class="table-wrap"><table><thead><tr><th>Site</th><th>PTM</th><th>Kinase</th><th>Disease Context</th><th>Evidence</th><th>Confidence</th><th>PMID</th></tr></thead><tbody>{% for r in rows %}<tr><td><b>{{r.site}}</b></td><td>{{r.ptm_type}}</td><td>{{r.kinase or '—'}}</td><td>{{r.disease_context}}</td><td>{{r.evidence}}</td><td>{{r.confidence}}</td><td>{{r.pmid}}</td></tr>{% endfor %}</tbody></table></div>
+{% else %}
+<div class="empty">No PTM sites recorded for this protein yet.</div>
+{% endif %}
+{% endblock %}

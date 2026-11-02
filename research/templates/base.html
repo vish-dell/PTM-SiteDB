@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}PTM-SiteDB Research Suite{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/research.css') }}">
+{% block head %}{% endblock %}
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="/"><span class="logo-mark">PTM</span> Phosphoproteome Atlas</a>
+<ul class="nav-links">
+<li><a href="/">Database Home</a></li>
+<li><a href="/search">Search</a></li>
+<li><a href="/browse">Browse</a></li>
+<li><a href="/statistics">Statistics</a></li>
+<li class="dd"><a href="{{ url_for('home') }}">Research ▾</a><ul class="dd-menu">
+<li><a href="{{ url_for('home') }}">Research Overview</a></li>
+<li><a href="{{ url_for('upload_analysis') }}">Run Cohort</a></li>
+<li><a href="{{ url_for('analysis') }}">Results</a></li>
+<li><a href="{{ url_for('benchmark') }}">Driver Benchmark</a></li>
+<li><a href="{{ url_for('robustness') }}">Robustness</a></li>
+<li><a href="{{ url_for('related_work') }}">Related Work</a></li>
+<li><a href="{{ url_for('methodology') }}">Methodology</a></li>
+<li><a href="{{ url_for('s127_evidence') }}">S127 Evidence</a></li>
+<li><a href="{{ url_for('download_page') }}">Download Results</a></li>
+<li><a href="{{ url_for('help_page') }}">Research Help</a></li>
+</ul></li>
+<li><a href="/download">Database Download</a></li>
+</ul><span class="nav-version">Research</span>
+</div></nav>
+<main class="page-body"><div class="container">{% block content %}{% endblock %}</div></main>
+<footer><div class="footer-inner">
+<div><div class="logo-name">PTM-SiteDB · Research Extension</div><p>The original database, search, browse, protein pages and Analysis Suite remain available. The expanded cohort workflow is an additional research module. Only measured/source-backed records are analyzed; missing inputs are not converted into negative findings.</p></div>
+<div><h4>Research</h4><a href="{{ url_for('home') }}">Overview</a><a href="{{ url_for('upload_analysis') }}">Run analysis</a><a href="{{ url_for('benchmark') }}">Benchmark</a><a href="{{ url_for('robustness') }}">Robustness</a></div>
+<div><h4>Sources</h4><a href="https://www.uniprot.org/" target="_blank" rel="noopener">UniProt</a><a href="https://www.intogen.org/download" target="_blank" rel="noopener">IntOGen</a><a href="https://biomics.lab.nycu.edu.tw/dbPTM/download.php" target="_blank" rel="noopener">dbPTM</a><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PubMed</a></div>
+</div></footer>
+{% block scripts %}{% endblock %}
+</body></html>

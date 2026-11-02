@@ -1,0 +1,25 @@
+﻿section,status,message
+COUNTS,NOTE,records=169 unique_sites=148 proteins=9 kinases=8 publications=107
+SITES,PASS,format/position/type check: 0 problem(s)
+SITES,PASS,exact duplicate rows (same protein+site+type+PMID): 0
+SITES,NOTE,21 rows are extra PMIDs for an already-listed site (allowed)
+PROTEINS,NOTE,"UniProt check skipped (offline?): <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>"
+KINASES,NOTE,"placeholder values (blank/dash/None/nan): {'': 152, '—': 6}"
+KINASES,PASS,"mixed-case dupes=0, extra spaces=0, numeric=0"
+KINASES,PASS,tyrosine-kinase on S/T site: 0
+KINASES,NOTE,"records with kinase: 11 -> ATM, CHK2, CK1, CK2, GSK3B, MAP2K2, MTORC2, PDK1"
+PMIDS,PASS,format check: 0 problem(s)
+PMIDS,PASS,PMIDs not found on PubMed: []
+PMIDS,FAIL,retracted PMIDs: ['11279024']
+PMIDS,NOTE,title looks unrelated to protein or phosphorylation (review by hand): 5
+VERIFY,NOTE,verification_report.csv entries=169 verdicts={'VERIFIED_EXPERIMENTAL_STRUCTURE': 169}
+VERIFY,FAIL,report matches database and every site is structure-covered
+PAGES,PASS,"39 routes requested, 0 error(s) (pages needing internet may fail offline)"
+PAGES,FAIL,"/api/statistics {'sites': 169, 'proteins': 9, 'kinases': 8, 'publications': 107} vs database 148/9/8/107"
+PAGES,FAIL,home page shows the real counts
+PAGES,FAIL,"internal columns leaking through /api/search: ['pmid_old', 'pmids_dbptm', 'pmid_score', 'pmid_count']"
+CODE,PASS,templates referenced but missing: []
+CODE,PASS,static files referenced but missing: []
+CODE,NOTE,JS endpoints with no obvious matching route (review by hand): []
+CODE,FAIL,files containing mis-decoded characters (e.g. 'â€”'): ['full_check.py']
+CODE,PASS,no global table{min-width:1000px} rule

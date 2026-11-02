@@ -1,0 +1,35 @@
+{% extends "base.html" %}{% block title %}Download — PTM-SiteDB{% endblock %}{% block content %}
+<div class="page-header"><h2>Download Data</h2><p>All PTM-SiteDB data is freely available for academic use. Cite the relevant primary sources when using this data.</p></div>
+<h3>Full Database ({{total}} sites)</h3>
+<div class="feature-grid">
+  <div class="feature"><b>TSV Format</b><p>Tab-separated values, compatible with Excel, R, Python and any spreadsheet tool.</p><a class="btn btn-primary btn-sm" style="margin-top:10px" href="{{url_for('api_download')}}">↓ Download TSV</a></div>
+  <div class="feature"><b>JSON Format</b><p>Structured JSON for programmatic access, API integration and bioinformatics pipelines.</p><a class="btn btn-primary btn-sm" style="margin-top:10px" href="{{url_for('api_download_json')}}">↓ Download JSON</a></div>
+  <div class="feature"><b>SQL Dump</b><p>SQLite schema and data for hosting your own local instance of PTM-SiteDB.</p><a class="btn btn-secondary btn-sm" style="margin-top:10px" href="{{url_for('api_download_sql')}}">↓ Download SQL</a></div>
+</div>
+<h3 style="margin-top:30px">Per-Protein Download</h3>
+<div class="filter-bar">
+  <div class="form-group">
+    <label>Select Gene</label>
+    <select id="gene-select">{% for g in genes %}<option value="{{g}}">{{g}}</option>{% endfor %}</select>
+  </div>
+  <div class="form-actions">
+    <a id="gene-tsv" class="btn btn-primary btn-sm" href="#">↓ TSV</a>
+    <a id="gene-json" class="btn btn-secondary btn-sm" href="#">↓ JSON</a>
+  </div>
+</div>
+<p class="stat-note" style="margin-top:16px">Please cite PhosphoSitePlus, dbPTM and UniProt when using data from PTM-SiteDB in publications.</p>
+<script>
+(()=>{
+  const sel=document.getElementById("gene-select");
+  const tsv=document.getElementById("gene-tsv");
+  const json=document.getElementById("gene-json");
+  function update(){
+    const g=encodeURIComponent(sel.value);
+    tsv.href=`/api/download/protein/${g}.tsv`;
+    json.href=`/api/download/protein/${g}.json`;
+  }
+  sel.addEventListener("change",update);
+  update();
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}3D Viewer — {{protein.gene}}{% endblock %}
+{% block head %}
+{% include "_3dmol.html" %}
+{% endblock %}
+{% block content %}
+<div class="page-header viewer-head"><div><span class="eyebrow">STRUCTURE VIEWER</span><h2>{{protein.gene}} <span class="mono">{{protein.uniprot}}</span></h2><p>Real protein structure with PTM residues highlighted only when mapping is verified.</p></div><a class="btn btn-secondary" href="{{url_for('protein',uniprot=protein.uniprot)}}">← Protein</a></div>
+<div class="viewer-layout">
+<section class="viewer-card"><div id="viewer3d"></div><div id="viewer-status" class="viewer-status">Finding an experimental structure…</div></section>
+<aside class="ptm-panel"><h3>PTM Sites</h3><div id="mapping-note" class="mapping-note"></div><div id="ptm-list"></div></aside>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+window.PTM_VIEWER = {
+  gene: {{ protein.gene|tojson }},
+  uniprot: {{ protein.uniprot|tojson }},
+  ptms: {{ ptms|tojson }}
+};
+</script>
+<script src="{{url_for('static',filename='js/viewer.js')}}?v=20261011-verify"></script>
+{% endblock %}

@@ -1,0 +1,6 @@
+# command: python validation/simulation/run_simulation.py
+# run: 2026-10-25T05:10:26Z
+Python 3.12.3
+pooled null: n_p = 96000  KS vs U(0,1) stat=0.357 (expected to deviate: p-values are discrete)
+Done. Outputs in /home/claude/ptm/ptm/validation/simulation
+# exit: 0

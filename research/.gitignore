@@ -1,0 +1,19 @@
+# Python environment and runtime
+.venv/
+.venv312/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+instance/
+
+# Downloaded biological source data and generated large analysis outputs
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/processed/cohort_results/*
+!data/processed/cohort_results/.gitkeep
+
+# Local logs / exports
+*.log
+*.partial
